@@ -6,9 +6,6 @@ document.querySelector('.new-form').classList.remove('collapsed');
 const sectionList = document.querySelector('.data');
 sectionList.classList.add('js-list');
 
-/* Agregar el código del li desde HTMl 
-Repetir este proceso por cada gatito */
-
 
 const kittenOne = `<li class="card">
 <article>
@@ -52,6 +49,6 @@ const kittenThree =  `<li class="card">
 </p>
 </li>`;
 
-sectionList.innerHTML('.js-list')=`<ul>${kittenOne} ${kittenTwo} ${kittenThree}</ul>`;
+sectionList.innerHTML=`<ul class='list' >${kittenOne} ${kittenTwo} ${kittenThree}</ul>`;
 
 
