@@ -1,5 +1,13 @@
 'user strict';
 
+<<<<<<< HEAD
+=======
+const kittenImage ='https://ychef.files.bbci.co.uk/976x549/p07ryyyj.jpg';
+const kittenName = 'Anastasio';
+const kittenDesc = 'Ruisueño, juguetón, le gusta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle! ';
+const kittenRace = 'British Shorthair';
+
+>>>>>>> 83b31e12ee7855b7100a443040fd5f86a82710cb
 
 document.querySelector('.new-form').classList.add('js-new-form');
 const menuCollapsable = document.querySelector('.js-new-form');
@@ -34,7 +42,7 @@ const kittenThreeDescription = "Ruiseño, juguetón, le guta estar tranquilo y q
 
 const kittenOne = `<li class="card kittenOne">
 <article>
-  <img
+  <img 
     class="card_img"
     src="${kittenOneImg}"
     alt="gatito"
@@ -66,7 +74,7 @@ const kittenThree =  `<li class="card kittenThree">
 <p class="card_description">${kittenThreeDescription}</p>
 </li>`;
 
-sectionList.innerHTML = `<ul class="list" >${kittenOne} ${kittenTwo} ${kittenThree}</ul>`;
+sectionList.innerHTML=`<ul class='list'>${kittenOne} ${kittenTwo} ${kittenThree}</ul>`;
 
 
 const inputDesc = document.querySelector(".input");
