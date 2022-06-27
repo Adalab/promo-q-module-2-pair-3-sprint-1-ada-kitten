@@ -18,7 +18,7 @@ sectionList.classList.add('js-list');
 
 const kittenOneImg = "https://ychef.files.bbci.co.uk/976x549/p07ryyyj.jpg";
 const kittenOneName = "Anastacio";
-const kittenOneRace = "";
+const kittenOneRace = "British Shorthair";
 const kittenOneDescription = "Ruiseño, juguetón, le guta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle!";
 
 const kittenTwoImg = "https://images.emedicinehealth.com/images/article/main_image/cat-scratch-disease.jpg";
