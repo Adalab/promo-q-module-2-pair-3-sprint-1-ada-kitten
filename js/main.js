@@ -1,4 +1,11 @@
 'user strict';
+
+const kittenImage ='https://ychef.files.bbci.co.uk/976x549/p07ryyyj.jpg';
+const kittenName = 'Anastasio';
+const kittenDesc = 'Ruisueño, juguetón, le gusta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle! ';
+const kittenRace = 'British Shorthair';
+
+
 document.querySelector('.new-form').classList.add('js-new-form');
 document.querySelector('.new-form').classList.remove('collapsed');
 
@@ -9,16 +16,16 @@ sectionList.classList.add('js-list');
 
 const kittenOne = `<li class="card">
 <article>
-  <img
+  <img 
     class="card_img"
-    src="https://ychef.files.bbci.co.uk/976x549/p07ryyyj.jpg"
-    alt="gatito"
+    src="${kittenImage}"
+    alt="gatito" 
   />
-  <h3 class="card_title">Anastacio</h3>
+  <h3 class="card_title">${kittenName}</h3>
   <p class="card_description">
-    Ruiseño, juguetón, le guta estar tranquilo y que nadie le
-    moleste. Es una maravilla acariciarle!
+   ${kittenDesc}
   </p>
+ 
 </article>
 </li>`;
 
@@ -31,7 +38,7 @@ alt="gatito"
 <h3 class="card_title">Fiona</h3>
 <h4 class="card_race">British Shorthair</h4>
 <p class="card_description">
-Ruiseño, juguetón, le guta estar tranquilo y que nadie le moleste.
+Risueño, juguetón, le guta estar tranquilo y que nadie le moleste.
 Es una maravilla acariciarle!
 </p>
 </li>`;
@@ -49,6 +56,6 @@ const kittenThree =  `<li class="card">
 </p>
 </li>`;
 
-sectionList.innerHTML=`<ul class='list' >${kittenOne} ${kittenTwo} ${kittenThree}</ul>`;
+sectionList.innerHTML=`<ul class='list'>${kittenOne} ${kittenTwo} ${kittenThree}</ul>`;
 
 
