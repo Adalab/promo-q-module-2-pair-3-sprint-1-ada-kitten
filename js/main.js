@@ -42,6 +42,7 @@ Risueño, juguetón, le guta estar tranquilo y que nadie le moleste.
 Es una maravilla acariciarle!
 </p>
 </li>`;
+
 const kittenThree =  `<li class="card">
 <img
   class="card_img"
@@ -56,6 +57,10 @@ const kittenThree =  `<li class="card">
 </p>
 </li>`;
 
+<<<<<<< HEAD
 sectionList.innerHTML=`<ul class='list'>${kittenOne} ${kittenTwo} ${kittenThree}</ul>`;
+=======
+sectionList.innerHTML = `<ul class="list" >${kittenOne} ${kittenTwo} ${kittenThree}</ul>`;
+>>>>>>> 9f8f0818507a10a6e1428608ff98e3c63c0cf1a2
 
 
