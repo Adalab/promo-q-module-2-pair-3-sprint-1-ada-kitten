@@ -2,13 +2,79 @@
 
 document.querySelector('.new-form').classList.add('js-new-form');
 const menuCollapsable = document.querySelector('.js-new-form');
-menuCollapsable.classList.remove('collapsed');
+const buttonPlus = document.querySelector(".item");
+const buttonSearch = document.querySelector(".button-search");
 
-if (menuCollapsable.classList.contains("collapsed")) {
-  menuCollapsable.classList.remove('collapsed');
-} else {
-  menuCollapsable.classList.add('collapsed');
-}
+
+document.querySelector(".button").classList.add("js-btn-add");
+const buttonAdd = document.querySelector(".js-btn-add");
+
+buttonAdd.addEventListener("click", () => {
+  event.preventDefault();
+  const inputDesc = document.querySelector('.js-input-desc');
+  const inputPhoto = document.querySelector('.js-input-photo');
+  const inputName = document.querySelector('.js-input-name');
+  const labelMesageError = document.querySelector('.js-label-error');
+
+
+  const valueDesc = inputDesc.value;
+  const valuePhoto = inputPhoto.value;
+  const valueName = inputName.value;
+
+  if (valueDesc === '' || valuePhoto === '' || valueName === '') {
+    labelMesageError.innerHTML = `Debe rellenar todos los valores`
+  }
+});
+
+
+
+buttonSearch.addEventListener("click", () => {
+  event.preventDefault();
+  const inputDesc = document.querySelector('.input__description');
+  const inputRace = document.querySelector('.input__race');
+  
+  // const searchSection = document.querySelector(".search");
+  // const labelMesageError = searchSection.querySelector(".js-label-error");
+  const labelMesageError = document.querySelector('.js-label-error-search');
+
+
+  const valueDesc = inputDesc.value;
+  const valueRace = inputRace.value;
+
+  if (valueDesc === '' || valueRace === '') {
+    labelMesageError.innerHTML = `Debe rellenar todos los valores`
+  }
+});
+
+
+
+  buttonPlus.addEventListener("click", () => {
+  menuCollapsable.classList.toggle("collapsed");
+});
+
+// if (menuCollapsable.classList.contains("collapsed")) {
+//   menuCollapsable.classList.remove('collapsed');
+// } else {
+//   menuCollapsable.classList.add('collapsed');
+// }
+
+const buttonCancel = document.querySelector(".button-cancel");
+buttonCancel.addEventListener("click", () => {
+  event.preventDefault();
+  const inputDesc = document.querySelector('.js-input-desc');
+  const inputPhoto = document.querySelector('.js-input-photo');
+  const inputName = document.querySelector('.js-input-name');
+  const inputRace = document.querySelector(".js-input-race");
+
+
+  inputDesc.value = "";
+  inputPhoto.value = "";
+  inputName.value = "";
+  inputRace.value = "";
+
+  menuCollapsable.classList.add("collapsed");
+})
+
 
 
 const sectionList = document.querySelector('.data');
