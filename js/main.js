@@ -151,6 +151,7 @@ if (!kittenOneRace) {
 } else {
   html = kittenOneRace;
 }
+
 /*  *** añadimos gato a traves del form */
 const buttonAddKitten = document.querySelector(".js-addKitten");
 
@@ -168,19 +169,8 @@ function renderKitten(url, desc, name, race) {
   </li>`;
 }
 
-buttonAddKitten.addEventListener("click", () => {
-  const valueDescr = document.querySelector(".js-input-desc").value;
-  const valuePhoto = document.querySelector(".js-input-photo").value;
-  const valueName = document.querySelector(".js-input-name").value;
-  const valueRace = document.querySelector(".js-input-race").value;
-
-  renderKitten(valuePhoto, valueDescr, valueName, valueRace);
-});
-
-/* *** validar gatito */
-
-function addValidateKitten(ev) {
-  ev.preventDefault();
+function addValidateKitten() {
+  const isCompleted = true;
   const inputDesc = document.querySelector(".js-input-desc");
   const inputPhoto = document.querySelector(".js-input-photo");
   const inputName = document.querySelector(".js-input-name");
@@ -192,7 +182,90 @@ function addValidateKitten(ev) {
 
   if (valueDesc === "" || valuePhoto === "" || valueName === "") {
     labelMesageError.innerHTML = `Debe rellenar todos los valores`;
+    isCompleted = false;
   }
+  return true;
+}
+function resetForm() {
+  const inputDesc = document.querySelector(".js-input-desc");
+  const inputPhoto = document.querySelector(".js-input-photo");
+  const inputName = document.querySelector(".js-input-name");
+  const inputRace = document.querySelector(".js-input-race");
+
+  inputDesc.value = "";
+  inputPhoto.value = "";
+  inputName.value = "";
+  inputRace.value = "";
 }
 
-buttonAdd.addEventListener("click", addValidateKitten);
+buttonAddKitten.addEventListener("click", (ev) => {
+  const valueDescr = document.querySelector(".js-input-desc").value;
+  const valuePhoto = document.querySelector(".js-input-photo").value;
+  const valueName = document.querySelector(".js-input-name").value;
+  const valueRace = document.querySelector(".js-input-race").value;
+  ev.preventDefault();
+  addValidateKitten();
+  if ((addValidateKitten = true)) {
+    getObj(valueDescr, valuePhoto, valueName, valueRace);
+  }
+  resetForm();
+});
+
+//ejemplo de un objeto con la información del primer gatito
+const kittenData_1 = {
+  image: "https://ychef.files.bbci.co.uk/976x549/p07ryyyj.jpg",
+  name: "Anastacio",
+  desc: "Ruiseño, juguetón, le guta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle!",
+  race: "British Shorthair",
+};
+const kittenData_2 = {
+  image: "https://ychef.files.bbci.co.uk/976x549/p07ryyyj.jpg",
+  name: "Anastacio2",
+  desc: "Ruiseño, juguetón, le guta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle!",
+  race: "British Shorthair",
+};
+const kittenData_3 = {
+  image: "https://ychef.files.bbci.co.uk/976x549/p07ryyyj.jpg",
+  name: "Anastacio3",
+  desc: "Ruiseño, juguetón, le guta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle!",
+  race: "British Shorthair",
+};
+/* render a traves de parametros del imput
+function renderKitten(url, desc, name, race) {
+  const newKitten = document.querySelector(".list");
+  newKitten.innerHTML += `<li class="card newKitten">
+  <img
+  class="card_img"
+  src="${url}"
+  alt="gatito"
+  />
+  <h3 class="card_title">${name.toUpperCase()}</h3>
+  <h4 class="card_race">${race}</h4>
+  <p class="card_description">${desc}</p>
+  </li>`;
+} */
+function renderKitten(objKitten) {
+  const newKitten = document.querySelector(".list");
+  newKitten.innerHTML += `<li class="card newKitten">
+  <img
+  class="card_img"
+  src="${objKitten.image}"
+  alt="gatito"
+  />
+  <h3 class="card_title">${objKitten.name.toUpperCase()}</h3>
+  <h4 class="card_race">${objKitten.race}</h4>
+  <p class="card_description">${objKitten.desc}</p>
+  </li>`;
+}
+renderKitten(kittenData_1);
+
+function getObj(inputDesc, inputPhoto, inputName, inputRace) {
+  const objKitten = {
+    image: inputPhoto,
+    name: inputName,
+    desc: inputDesc,
+    race: inputRace,
+  };
+
+  renderKitten(objKitten);
+}
